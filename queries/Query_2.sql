@@ -1,0 +1,56 @@
+USE [RMS_Sviluppo]
+GO
+
+/****** Object:  UserDefinedTableType [dbo].[ForecastTableType]    Script Date: 12-Jan-25 22:15:42 ******/
+CREATE TYPE [dbo].[ForecastTableType] AS TABLE(
+	[PlanDett] [nvarchar](100) NULL,
+	[PlanJan] [nvarchar](100) NULL,
+	[PlanFeb] [nvarchar](100) NULL,
+	[PlanMar] [nvarchar](100) NULL,
+	[PlanApr] [nvarchar](100) NULL,
+	[PlanMay] [nvarchar](100) NULL,
+	[PlanJun] [nvarchar](100) NULL,
+	[PlanJul] [nvarchar](100) NULL,
+	[PlanAug] [nvarchar](100) NULL,
+	[PlanSep] [nvarchar](100) NULL,
+	[PlanOct] [nvarchar](100) NULL,
+	[PlanNov] [nvarchar](100) NULL,
+	[PlanDec] [nvarchar](100) NULL,
+	[Owner] [nvarchar](255) NULL,
+	[STDCode] [nvarchar](800) NULL,
+	[Title] [nvarchar](800) NULL,
+	[Language] [nvarchar](800) NULL,
+	[RevOld] [nvarchar](20) NULL,
+	[RevNew] [nvarchar](20) NULL,
+	[Azione] [nvarchar](255) NULL,
+	[Typology] [nvarchar](255) NULL,
+	[Description] [nvarchar](800) NULL,
+	[Driver1] [int] NULL,
+	[Driver2] [int] NULL,
+	[Driver3] [int] NULL,
+	[Driver4] [int] NULL,
+	[Driver5] [int] NULL,
+	[Driver6] [int] NULL,
+	[Driver7] [int] NULL,
+	[Driver8] [int] NULL,
+	[Driver9] [int] NULL,
+	[Manhours_DG_NR] [decimal](8, 2) NULL,
+	[Manhours_DG_EE] [decimal](8, 2) NULL,
+	[Manhours_Eni_Other] [decimal](8, 2) NULL,
+	[Manhours_TECH] [decimal](8, 2) NULL,
+	[Manhours_EP] [decimal](8, 2) NULL,
+	[Manhours_Other_Ext] [decimal](8, 2) NULL,
+	[Cost_EP] [decimal](8, 2) NULL,
+	[Cost_Other_Ext] [decimal](8, 2) NULL,
+	[Manhours_CAFE] [decimal](8, 2) NULL,
+	[Manhours_COETA] [decimal](8, 2) NULL,
+	[Manhours_FIM] [decimal](8, 2) NULL,
+	[Manhours_FATA] [decimal](8, 2) NULL,
+	[Manhours_REEC] [decimal](8, 2) NULL,
+	[Manhours_StdTeam] [decimal](8, 2) NULL,
+	[Other_BU_Name] [nvarchar](255) NULL,
+	[COMMENTI_EP] [nvarchar](255) NULL
+)
+GO
+
+
