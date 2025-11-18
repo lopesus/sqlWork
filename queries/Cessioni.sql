@@ -32,15 +32,26 @@ where P."Status" = 5
 order by fi."SegmentDepartureDateTime";
 
 -- flightForSegment
-select fi."SegmentFlightIdentifier",  P."Id"  as "ProposalId", s."Id"  as SeriesId,  c."Code","Flights".*
+select fi."SegmentFlightIdentifier", P."Id" as "ProposalId", s."Id" as SeriesId, c."Code", "Flights".*
 from "Flights"
          inner join public."FlightIntegrations" FI on "Flights"."FlightIntegrationId" = FI."Id"
          join public."OriginDestinations" OD on OD."Id" = "Flights"."OriginDestinationId"
          join public."Series" S on OD."SeriesId" = S."Id"
          join public."Proposals" P on P."Id" = S."ProposalId"
          join public."Companies" C on C."Id" = P."CustomerId"
-where FI."SegmentFlightIdentifier" = 'NO1350VRNTFS22DEC25';
+where FI."SegmentFlightIdentifier" = 'NO1351TFSVRN22DEC25';
+--where FI."SegmentFlightIdentifier" = 'NO1350VRNTFS22DEC25';
 
+--BlockSpaces
+select *
+from "BlockSpaces"
+where "ProposalId" in (11, 13) and "FlightId" in (62,150);
+
+-- flight
+select *
+from "Flights"
+where "Id" in (62);
+-- where "Id" in (63, 151);
 --NO1350TFSVRN02FEB26;10;NO;16;47;VRN;2026-02-02 00:00:00.000000;2026-02-02 05:00:00.000000
 --
 
@@ -108,3 +119,8 @@ select fi."SegmentFlightIdentifier", fi."SegmentBoardingPoint", fi."SegmentDepla
 from "FlightIntegrations" as fi
 
 order by fi."SegmentDepartureDateTime";
+
+
+
+
+update  "BlockSpaces" set "MemberBlockIdentifier" = 'xxx' where  "ProposalId"=xxx and "FlightId"=xxx and "Compartment"='xxx' ;

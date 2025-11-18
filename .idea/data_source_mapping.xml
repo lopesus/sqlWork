@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourcePerFileMappings">
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251107_135336.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251107_151141.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251110_085735.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/Cessioni.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/Query.sql" value="3c53a1cb-0c3c-4a5e-a4fc-5bab21782c39" />
     <file url="file://$PROJECT_DIR$/queries/Query_1.sql" value="3c53a1cb-0c3c-4a5e-a4fc-5bab21782c39" />
-    <file url="file://$PROJECT_DIR$/queries/Query_10.sql" value="951749b3-abcd-4674-9ac1-855817bdf7fa" />
-    <file url="file://$PROJECT_DIR$/queries/Query_11.sql" value="951749b3-abcd-4674-9ac1-855817bdf7fa" />
     <file url="file://$PROJECT_DIR$/queries/Query_12.sql" value="53d3515d-26ca-488e-8b86-d653f1fe5142" />
     <file url="file://$PROJECT_DIR$/queries/Query_13.sql" value="53d3515d-26ca-488e-8b86-d653f1fe5142" />
     <file url="file://$PROJECT_DIR$/queries/Query_14.sql" value="53d3515d-26ca-488e-8b86-d653f1fe5142" />
@@ -38,11 +39,9 @@
     <file url="file://$PROJECT_DIR$/queries/Query_39.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/Query_4.sql" value="3c53a1cb-0c3c-4a5e-a4fc-5bab21782c39" />
     <file url="file://$PROJECT_DIR$/queries/Query_40.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
+    <file url="file://$PROJECT_DIR$/queries/Query_41.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/Query_5.sql" value="3c53a1cb-0c3c-4a5e-a4fc-5bab21782c39" />
     <file url="file://$PROJECT_DIR$/queries/Query_6.sql" value="3c53a1cb-0c3c-4a5e-a4fc-5bab21782c39" />
-    <file url="file://$PROJECT_DIR$/queries/Query_7.sql" value="951749b3-abcd-4674-9ac1-855817bdf7fa" />
-    <file url="file://$PROJECT_DIR$/queries/Query_8.sql" value="951749b3-abcd-4674-9ac1-855817bdf7fa" />
-    <file url="file://$PROJECT_DIR$/queries/Query_9.sql" value="951749b3-abcd-4674-9ac1-855817bdf7fa" />
     <file url="file://$PROJECT_DIR$/queries/TaxVariations.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
   </component>
 </project>

@@ -6,6 +6,9 @@
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/27dfa06c-2ea8-4c4c-a425-6307e4a397ba/console_22.sql" dialect="PostgreSQL" />
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/27dfa06c-2ea8-4c4c-a425-6307e4a397ba/console_23.sql" dialect="PostgreSQL" />
     <file url="file://$USER_HOME$/Desktop/Hint Work/_______db.sql" dialect="PostgreSQL" />
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251107_135336.sql" dialect="PostgreSQL" />
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251107_151141.sql" dialect="PostgreSQL" />
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251110_085735.sql" dialect="PostgreSQL" />
     <file url="file://$USER_HOME$/Desktop/Hint Work/dump-flightdb-202509261055.sql" dialect="PostgreSQL" />
     <file url="file://$USER_HOME$/Desktop/web/sql/sp_Adopt_Iogp_Standard_Row.sql" dialect="TSQL" />
     <file url="file://C:/assist-project/Wallet.DataBase/Security/AGSDOM_Assist_NovopayDB_ReadOnly.sql" dialect="TSQL" />
@@ -24,11 +27,6 @@
     <file url="file://C:/assist-project/Wallet.ServicesNew/database/Germania/Report Germania/Stored procedure/AnaGetEsercentiAttivi.sql" dialect="TSQL" />
     <file url="file://C:/assist-project/Wallet.ServicesNew/database/Release 2a fase/02 Stored/01 - AnaGetEsercentiAttivi.sql" dialect="TSQL" />
     <file url="file://C:/assist-project/Wallet.ServicesNew2/database/Release 2a fase/02 Stored/25 - SetMsgCondizioniContrattualiMail.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/../../../_________work/ram/rms-fdl/SQL Server Management Studio/sp_Report_Forecast.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/../../../_________work/ram/rms-fdl/SQL Server Management Studio/sp_Report_Forecast_Export.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/../../../_________work/ram/rms-fdl/SQL Server Management Studio/sp_Update_CS_Forecast.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/../../../_________work/ram/rms-fdl/SQL Server Management Studio/sp_Update_CS_ForecastProgress.sql" dialect="TSQL" />
-    <file url="file://$PROJECT_DIR$/../../../_________work/ram/rms-fdl/SQL Server Management Studio/tbl_CS_ForecastProgress.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/TSQLV6.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/queries/Cessioni.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_36.sql" dialect="PostgreSQL" />
@@ -36,6 +34,7 @@
     <file url="file://$PROJECT_DIR$/queries/Query_38.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_39.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_40.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/queries/Query_41.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/TaxVariations.sql" dialect="PostgreSQL" />
   </component>
 </project>
