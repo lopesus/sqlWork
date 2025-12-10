@@ -203,7 +203,10 @@ select "Id",
            WHEN 2 THEN 'INF'
            ELSE 'Unknown'
            END AS "PaxType",
-       "TaxPoint",
+     CASE "TaxPoint"
+           WHEN 0 THEN 'D'
+           WHEN 1 THEN 'A'
+           END AS "TaxPoint",
 --        "CurrencyId",
        "Direction",
        "FlightDateFrom",
