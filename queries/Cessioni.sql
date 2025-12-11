@@ -10,6 +10,8 @@ COMMIT;
 
 -- get
 select fi."SegmentFlightIdentifier",
+       d."Name" as "DestinationName",
+       d."Id"   as "DestinationId",
        P."Id"  as "ProposalId",
        c."Code",
        s."Id"  as SeriesId,
@@ -23,6 +25,7 @@ from "FlightIntegrations" as fi
          join public."Series" S on OD."SeriesId" = S."Id"
          join public."Proposals" P on P."Id" = S."ProposalId"
          join public."Companies" C on C."Id" = P."CustomerId"
+inner join public."Destinations" D on P."DestinationId" = D."Id"
 
 -- where fi."SegmentFlightIdentifier" = '1234567890'  and c."Code" = 'AL'
 -- where  c."Code" = 'AL'
@@ -45,7 +48,8 @@ where FI."SegmentFlightIdentifier" = 'NO1351TFSVRN22DEC25';
 --BlockSpaces
 select *
 from "BlockSpaces"
-where "ProposalId" in (11, 13) and "FlightId" in (62,150);
+where "ProposalId" in (11, 13)
+  and "FlightId" in (62, 150);
 
 -- flight
 select *
@@ -122,5 +126,8 @@ order by fi."SegmentDepartureDateTime";
 
 
 
-
-update  "BlockSpaces" set "MemberBlockIdentifier" = 'xxx' where  "ProposalId"=xxx and "FlightId"=xxx and "Compartment"='xxx' ;
+update "BlockSpaces"
+set "MemberBlockIdentifier" = 'xxx'
+where "ProposalId" = xxx
+  and "FlightId" = xxx
+  and "Compartment" = 'xxx';

@@ -192,11 +192,12 @@ set "Status"=3
 where "ProposalId" = 74
 ;
 --
-select "Id",
+select t."Id",
        "SeriesId",
        "Code",
        "Value",
        "AirportId",
+       a."IataCode",
        CASE "Ptc"
            WHEN 0 THEN 'ADT'
            WHEN 1 THEN 'CHD'
@@ -213,13 +214,14 @@ select "Id",
        "FlightDateTo",
        "Included",
        "Nation",
-       "Name",
+       t."Name",
        "SaleDateFrom",
 --        "TaxCarrier",
 
        "SaleDateTo"
-from "Taxes"
-where "SeriesId" = 112
+from "Taxes" t
+inner join public."Airports" A on "t"."AirportId" = A."Id"
+where "SeriesId" = 121
 ;
 -- and "Nation"='US'
 
@@ -230,7 +232,4 @@ from "TaxVariationTaxes"
 SELECT *
 FROM "__EFMigrationsHistory";
 
-SELECT conname
-FROM pg_constraint
-WHERE conrelid = '"TaxVariationTaxes"'::regclass
-  AND contype = 'f';
+
