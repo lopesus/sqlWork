@@ -39,6 +39,7 @@
     <file url="file://$PROJECT_DIR$/queries/Query_43.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_44.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_45.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/queries/Query_46.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/TaxVariation2.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/TaxVariations.sql" dialect="PostgreSQL" />
   </component>
