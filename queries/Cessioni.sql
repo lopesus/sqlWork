@@ -10,14 +10,14 @@ COMMIT;
 
 -- proposal with flights
 select fi."SegmentFlightIdentifier",
-       d."Name"                   as "DestinationName",
-       d."Id"                     as "DestinationId",
-       P."Id"                     as "ProposalId",
+       concat(d."Name", '-', d."Id") as "Destination",
+       P."Id"                        as "ProposalId",
        c."Code",
-       s."Id"                     as SeriesId,
-       fl."Id"                    as FlightId,
-       fi."SegmentBoardingPoint"  as "BoardingPoint",
-       fi."SegmentDeplaningPoint" as "DeplaningPoint",
+       s."Id"                        as SeriesId,
+       fl."Id"                       as FlightId,
+       OD."Id"                       as OriginDestinationId,
+       fi."SegmentBoardingPoint"     as "BoardingPoint",
+       fi."SegmentDeplaningPoint"    as "DeplaningPoint",
        fi."SegmentDepartureDateTime",
        fi."SegmentArrivalDateTime"
 from "FlightIntegrations" as fi
@@ -34,12 +34,28 @@ where P."Status" = 5
 order by fi."SegmentDepartureDateTime";
 ;
 --
+-- proposal with flights2
+select distinct concat(d."Name", '-', d."Id") as "Destination",
+                P."Id"                        as "ProposalId",
+                c."Code",
+                fi."SegmentBoardingPoint"     as "BoardingPoint",
+                fi."SegmentDeplaningPoint"    as "DeplaningPoint"
+from "FlightIntegrations" as fi
+         join public."Flights" fl on fi."Id" = fl."FlightIntegrationId"
+         join public."OriginDestinations" OD on OD."Id" = fl."OriginDestinationId"
+         join public."Series" S on OD."SeriesId" = S."Id"
+         join public."Proposals" P on P."Id" = S."ProposalId"
+         join public."Companies" C on C."Id" = P."CustomerId"
+         inner join public."Destinations" D on P."DestinationId" = D."Id"
+
+where P."Status" != 5
+;
+-- order by fi."SegmentDepartureDateTime";
+--
 update "Proposals"
 set "Status" = 5
 where "Id" in (115, 116);
 
-
-order by fi."SegmentDepartureDateTime";
 
 -- flightForSegment
 select fi."SegmentFlightIdentifier", P."Id" as "ProposalId", s."Id" as SeriesId, c."Code", "Flights".*
@@ -164,14 +180,14 @@ SELECT
     --fi."Id" AS "FlightIntegrationId",
     --fi."SegmentFlightIdentifier",
     --fi."SegmentFlightNumber",
-    fi."SegmentBoardingPoint"  AS "SegmentFrom",
-    fi."SegmentDeplaningPoint" AS "SegmentTo",
-    od."Id"                    AS "OriginDestinationId",
-    odBp."IataCode"            AS "OdFrom",
-    odDp."IataCode"            AS "OdTo",
-    p."Id"                     AS "ProposalId",
-    pBp."IataCode"             AS "ProposalFrom",
-    pDp."IataCode"             AS "ProposalTo"
+    fi."SegmentBoardingPoint"               AS "SegmentFrom",
+    fi."SegmentDeplaningPoint"              AS "SegmentTo",
+    od."Id"                                 AS "OriginDestinationId",
+    concat(odBp."IataCode", '-', odBp."Id") AS "OdFrom",
+    concat(odDp."IataCode", '-', odDp."Id") AS "OdTo",
+    p."Id"                                  AS "ProposalId",
+    pBp."IataCode"                          AS "ProposalFrom",
+    pDp."IataCode"                          AS "ProposalTo"
 FROM "FlightIntegrations" fi
          INNER JOIN "Flights" f ON f."FlightIntegrationId" = fi."Id"
          INNER JOIN "OriginDestinations" od ON f."OriginDestinationId" = od."Id"
@@ -191,13 +207,13 @@ from "Proposals" p
 -- where "Status" = 5;
 
 -- od
-SELECT
+SELECT distinct
     --fi."Id" AS "FlightIntegrationId",
     --fi."SegmentFlightIdentifier",
     --fi."SegmentFlightNumber",
     fi."SegmentBoardingPoint"               AS "SegmentFrom",
     fi."SegmentDeplaningPoint"              AS "SegmentTo",
-    fi."Routing" as fiRouting,
+    fi."Routing"                            as fiRouting,
     od."Id"                                 AS "ODId",
     concat(odBp."IataCode", '-', odBp."Id") AS "OdFrom",
     concat(odDp."IataCode", '-', odDp."Id") AS "OdTo",
@@ -214,5 +230,83 @@ FROM "FlightIntegrations" fi
          INNER JOIN "Airports" pBp ON p."OdFromId" = pBp."Id"
          INNER JOIN "Airports" pDp ON p."OdToId" = pDp."Id"
 
-where od."Id" in (208)
-order by fi."SegmentDepartureDateTime";
+where od."Id" in (208, 210, 217, 216);
+-- order by fi."SegmentDepartureDateTime";
+
+-- od2
+SELECT distinct
+    --fi."Id" AS "FlightIntegrationId",
+    --fi."SegmentFlightIdentifier",
+    --fi."SegmentFlightNumber",
+    fi."SegmentBoardingPoint"               AS "SegmentFrom",
+    fi."SegmentDeplaningPoint"              AS "SegmentTo",
+    fi."Routing"                            as fiRouting,
+    f."Id"                                  as "FlightId",
+    od."Id"                                 AS "ODId",
+    concat(odBp."IataCode", '-', odBp."Id") AS "OdFrom",
+    concat(odDp."IataCode", '-', odDp."Id") AS "OdTo",
+    p."Id"                                  AS "ProposalId",
+    pBp."IataCode"                          AS "ProposalFrom",
+    pDp."IataCode"                          AS "ProposalTo"
+FROM "FlightIntegrations" fi
+         INNER JOIN "Flights" f ON f."FlightIntegrationId" = fi."Id"
+         INNER JOIN "OriginDestinations" od ON f."OriginDestinationId" = od."Id"
+         INNER JOIN "Airports" odBp ON od."BoardingPointId" = odBp."Id"
+         INNER JOIN "Airports" odDp ON od."DeplaningPointId" = odDp."Id"
+         INNER JOIN "Series" s ON od."SeriesId" = s."Id"
+         INNER JOIN "Proposals" p ON s."ProposalId" = p."Id"
+         INNER JOIN "Airports" pBp ON p."OdFromId" = pBp."Id"
+         INNER JOIN "Airports" pDp ON p."OdToId" = pDp."Id"
+
+
+where P."Status" = 5
+  and odBp."IataCode" = 'MXP'
+--and odDp."IataCode" ='ZNZ'
+;
+--
+select *
+from "OriginDestinations"
+where "Id" = 217;
+
+--
+select *
+from "FlightIntegrations"
+where "Routing" = 'routing'
+;
+
+select *
+from "FlightIntegrations"
+where "Id" = 22806
+;
+
+-- SegmentFlightIdentifier proposal with flights
+select distinct fi."SegmentFlightIdentifier"
+from "FlightIntegrations" as fi
+         join public."Flights" fl on fi."Id" = fl."FlightIntegrationId"
+         join public."OriginDestinations" OD on OD."Id" = fl."OriginDestinationId"
+         join public."Series" S on OD."SeriesId" = S."Id"
+         join public."Proposals" P on P."Id" = S."ProposalId"
+         join public."Companies" C on C."Id" = P."CustomerId"
+         inner join public."Destinations" D on P."DestinationId" = D."Id"
+
+-- where fi."SegmentFlightIdentifier" = '1234567890'  and c."Code" = 'AL'
+-- where  c."Code" = 'AL'
+where P."Status" = 5;
+
+-- SegmentFlightIdentifier proposal with flights
+select distinct fi."SegmentFlightIdentifier",c."Code"
+from "FlightIntegrations" as fi
+         join public."Flights" fl on fi."Id" = fl."FlightIntegrationId"
+         join public."OriginDestinations" OD on OD."Id" = fl."OriginDestinationId"
+         join public."Series" S on OD."SeriesId" = S."Id"
+         join public."Proposals" P on P."Id" = S."ProposalId"
+         join public."Companies" C on C."Id" = P."CustomerId"
+         inner join public."Destinations" D on P."DestinationId" = D."Id"
+
+-- where fi."SegmentFlightIdentifier" = 'NO1350VRNTFS29DEC25'
+
+;
+--
+select * from "Flights"
+
+where "Id" in (64,152)
