@@ -290,11 +290,11 @@ from "FlightIntegrations" as fi
          inner join public."Destinations" D on P."DestinationId" = D."Id"
 
 -- where fi."SegmentFlightIdentifier" = '1234567890'  and c."Code" = 'AL'
--- where  c."Code" = 'AL'
-where P."Status" = 5;
+where c."Code" = 'AL'
+  and P."Status" = 5;
 
 -- SegmentFlightIdentifier proposal with flights
-select distinct fi."SegmentFlightIdentifier",c."Code"
+select distinct fi."SegmentFlightIdentifier", c."Code"
 from "FlightIntegrations" as fi
          join public."Flights" fl on fi."Id" = fl."FlightIntegrationId"
          join public."OriginDestinations" OD on OD."Id" = fl."OriginDestinationId"
@@ -307,6 +307,33 @@ from "FlightIntegrations" as fi
 
 ;
 --
-select * from "Flights"
+select *
+from "Flights"
 
-where "Id" in (64,152)
+where "Id" in (64, 152)
+;
+-- search seat data
+select distinct
+    --fi."SegmentFlightIdentifier",
+    concat(d."Name", '-', d."Id") as "Destination",
+    P."Id"                        as "ProposalId",
+    c."Code"
+--        s."Id"                        as SeriesId,
+   -- fl."Id"                       as FlightId
+--        OD."Id"                       as OriginDestinationId,
+--                 fi."SegmentBoardingPoint"     as "BoardingPoint",
+--                 fi."SegmentDeplaningPoint"    as "DeplaningPoint",
+--                 fi."SegmentDepartureDateTime",
+--                 fi."SegmentArrivalDateTime"
+from "Flights" fl
+         inner join public."FlightIntegrations" FI on FI."Id" = fl."FlightIntegrationId"
+         inner join public."OriginDestinations" OD on OD."Id" = fl."OriginDestinationId"
+         inner join public."Series" S on S."Id" = OD."SeriesId"
+         inner join public."Proposals" P on P."Id" = S."ProposalId"
+         inner join public."Companies" C on C."Id" = P."CustomerId"
+         inner join public."Destinations" D on D."Id" = P."DestinationId"
+where P."Status" = 5
+  --and c."Code" = 'AL'
+  and FI."SegmentDepartureDateTime" >= '2026-01-01'
+  and FI."SegmentDepartureDateTime" <= '2026-12-23'
+;
