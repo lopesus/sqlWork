@@ -6,15 +6,15 @@
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/27dfa06c-2ea8-4c4c-a425-6307e4a397ba/console_22.sql" dialect="PostgreSQL" />
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/27dfa06c-2ea8-4c4c-a425-6307e4a397ba/console_23.sql" dialect="PostgreSQL" />
     <file url="file://$USER_HOME$/Desktop/Hint Work/_______db.sql" dialect="PostgreSQL" />
-    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251222_174606.sql" dialect="PostgreSQL" />
-    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251222_175824.sql" dialect="PostgreSQL" />
-    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251223_081234.sql" dialect="PostgreSQL" />
-    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20260112_090531.sql" dialect="PostgreSQL" />
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20260113_142616.sql" dialect="PostgreSQL" />
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20260114_165816.sql" dialect="PostgreSQL" />
     <file url="file://$USER_HOME$/Desktop/Hint Work/dump-flightdb-202509261055.sql" dialect="PostgreSQL" />
     <file url="file://$USER_HOME$/Desktop/web/sql/sp_Adopt_Iogp_Standard_Row.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/TSQLV6.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/queries/BlockSpaces.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Cessioni.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/DropToRestore.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/queries/ProposalDrafts.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_36.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_37.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_38.sql" dialect="PostgreSQL" />
@@ -26,6 +26,8 @@
     <file url="file://$PROJECT_DIR$/queries/Query_44.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_45.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/Query_46.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/queries/Query_47.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/queries/Query_48.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/RequestDraft.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/TaxVariation2.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/queries/TaxVariations.sql" dialect="PostgreSQL" />

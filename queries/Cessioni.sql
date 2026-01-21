@@ -51,10 +51,23 @@ from "FlightIntegrations" as fi
 where P."Status" != 5
 ;
 -- order by fi."SegmentDepartureDateTime";
---
+
+-- set Proposals as Quoted
+update "Proposals"
+set "Status" = 0;
+
+--set Proposals as Done
 update "Proposals"
 set "Status" = 5
-where "Id" in (115, 116);
+where "Id" in (168, 184);
+
+--
+delete from  "BlockSpaces"
+    where "BlockSpaces"."ProposalId" in (168, 184);
+
+--
+    select  * from "BlockSpaces" where "MemberBlockIdentifier" ='ID7Y5PTBL';
+
 
 
 -- flightForSegment
@@ -319,7 +332,7 @@ select distinct
     P."Id"                        as "ProposalId",
     c."Code"
 --        s."Id"                        as SeriesId,
-   -- fl."Id"                       as FlightId
+-- fl."Id"                       as FlightId
 --        OD."Id"                       as OriginDestinationId,
 --                 fi."SegmentBoardingPoint"     as "BoardingPoint",
 --                 fi."SegmentDeplaningPoint"    as "DeplaningPoint",
@@ -337,3 +350,32 @@ where P."Status" = 5
   and FI."SegmentDepartureDateTime" >= '2026-01-01'
   and FI."SegmentDepartureDateTime" <= '2026-12-23'
 ;
+
+-- fligths with AL and VR
+WITH TargetIntegrations AS (SELECT fi."Id"
+                            FROM public."FlightIntegrations" fi
+                                     INNER JOIN public."Flights" fl ON fi."Id" = fl."FlightIntegrationId"
+                                     INNER JOIN public."OriginDestinations" od ON fl."OriginDestinationId" = od."Id"
+                                     INNER JOIN public."Series" s ON od."SeriesId" = s."Id"
+                                     INNER JOIN public."Proposals" p ON s."ProposalId" = p."Id"
+                                     INNER JOIN public."Companies" c ON p."CustomerId" = c."Id"
+                            WHERE c."Code" IN ('AL', 'VR')
+                              and p."Status" = 5
+                            GROUP BY fi."Id"
+                            HAVING COUNT(DISTINCT c."Code") = 2)
+SELECT fi."Id"                    AS "FlightIntegrationId",
+       fi."SegmentFlightNumber"   AS "SegmentFlightNumber",
+       fi."SegmentBoardingPoint"  AS "SegmentBoardingPoint",
+       fi."SegmentDeplaningPoint" AS "SegmentDeplaningPoint",
+       fl."Id"                    AS "FlightId",
+       c."Code"                   AS "CustomerCode",
+       p."Id"                     AS "ProposalId"
+FROM public."FlightIntegrations" fi
+         INNER JOIN public."Flights" fl ON fi."Id" = fl."FlightIntegrationId"
+         INNER JOIN public."OriginDestinations" od ON fl."OriginDestinationId" = od."Id"
+         INNER JOIN public."Series" s ON od."SeriesId" = s."Id"
+         INNER JOIN public."Proposals" p ON s."ProposalId" = p."Id"
+         INNER JOIN public."Companies" c ON p."CustomerId" = c."Id"
+WHERE fi."Id" IN (SELECT "Id" FROM TargetIntegrations)
+  AND c."Code" IN ('AL', 'VR')
+ORDER BY fi."Id", c."Code";

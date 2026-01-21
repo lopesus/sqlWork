@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourcePerFileMappings">
-    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251222_174606.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
-    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251222_175824.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
-    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20251223_081234.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
-    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20260112_090531.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20260113_142616.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
+    <file url="file://$USER_HOME$/Desktop/Hint Work/__cessioni/UpdateBlockSpaceMemberBlockIdentifier_20260114_165816.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
+    <file url="file://$PROJECT_DIR$/queries/BlockSpaces.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/Cessioni.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/DropToRestore.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
+    <file url="file://$PROJECT_DIR$/queries/ProposalDrafts.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/Query.sql" value="3c53a1cb-0c3c-4a5e-a4fc-5bab21782c39" />
     <file url="file://$PROJECT_DIR$/queries/Query_1.sql" value="3c53a1cb-0c3c-4a5e-a4fc-5bab21782c39" />
     <file url="file://$PROJECT_DIR$/queries/Query_12.sql" value="53d3515d-26ca-488e-8b86-d653f1fe5142" />
@@ -47,6 +47,8 @@
     <file url="file://$PROJECT_DIR$/queries/Query_44.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/Query_45.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/Query_46.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
+    <file url="file://$PROJECT_DIR$/queries/Query_47.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
+    <file url="file://$PROJECT_DIR$/queries/Query_48.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
     <file url="file://$PROJECT_DIR$/queries/Query_5.sql" value="3c53a1cb-0c3c-4a5e-a4fc-5bab21782c39" />
     <file url="file://$PROJECT_DIR$/queries/Query_6.sql" value="3c53a1cb-0c3c-4a5e-a4fc-5bab21782c39" />
     <file url="file://$PROJECT_DIR$/queries/RequestDraft.sql" value="27dfa06c-2ea8-4c4c-a425-6307e4a397ba" />
